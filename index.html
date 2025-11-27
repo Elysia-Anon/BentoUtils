@@ -6,13 +6,16 @@
 
     <meta charset="UTF-8">
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2929620643066807"
+     crossorigin="anonymous"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
 
-    <title>Bento Tools - Free JSON Formatter, Password Gen & MP4 Player</title>
+    <title>Bento Tools - Privacy-First Web Utilities</title>
 
-    <meta name="description" content="A privacy-first web toolkit. Features a secure Password Generater, JSON Formatter, CSS Gradient Maker, and Local Video Player. 100% Client-side.">
+    <meta name="description" content="Free developer tools: JSON Formatter, Strong Password Generator, CSS Gradient Maker, and Local MP4 Player. 100% Client-side & Secure.">
 
     
 
@@ -22,7 +25,6 @@
 
     <style>
 
-        /* === 1. 背景与基础样式 === */
 
         body {
 
@@ -42,8 +44,6 @@
 
 
 
-        /* === 2. 响应式 Bento 网格 === */
-
         .bento-grid {
 
             display: grid;
@@ -56,21 +56,15 @@
 
             grid-auto-rows: auto;
 
-            /* 🔴 [关键修改] 开启紧凑模式，让网格自动填补空缺 */
-
             grid-auto-flow: dense;
 
         }
 
 
 
-        /* 电脑/平板端 (宽度 > 768px) */
-
         @media (min-width: 768px) {
 
             .bento-grid {
-
-                /* 电脑端：自动填充多列 */
 
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
@@ -80,19 +74,15 @@
 
             
 
-            /* 卡片尺寸定义 */
-
-            .card-large { grid-column: span 2; grid-row: span 2; } /* 大方块 */
-
-            .card-wide  { grid-column: span 2; }                   /* 宽条 */
-
-            .card-tall  { grid-column: span 1; grid-row: span 2; } /* 竖长侧边栏 */
-
+            
+            .card-large { grid-column: span 2; grid-row: span 2; }
+            .card-wide  { grid-column: span 2; }                   
+            .card-tall  { grid-column: span 1; grid-row: span 2; } 
         }
 
         
 
-        /* === 3. 交互与组件 === */
+        
 
         .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
@@ -104,8 +94,7 @@
 
         
 
-        /* 模态框优化 */
-
+        
         .modal-backdrop { backdrop-filter: blur(5px); }
 
         .modal-content { max-height: 90vh; overflow-y: auto; width: 90%; }
@@ -114,7 +103,7 @@
 
 
 
-        /* 拖拽区域与颜色输入框 */
+        
 
         .drop-zone { border: 2px dashed #475569; transition: all 0.3s ease; }
 
@@ -234,7 +223,7 @@
 
 
 
-        <a href="blog/secure-password-guide.html" class="card card-tall bg-slate-800 rounded-3xl p-6 flex flex-col relative overflow-hidden border border-slate-700 hover:border-purple-500 cursor-pointer group no-underline transition">
+        <a href="blog/index.html" class="card card-tall bg-slate-800 rounded-3xl p-6 flex flex-col relative overflow-hidden border border-slate-700 hover:border-purple-500 cursor-pointer group no-underline transition">
 
             <div class="absolute -right-6 -top-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition"></div>
 
@@ -469,29 +458,24 @@
 
 
     <footer class="border-t border-slate-800/50 mt-20 bg-slate-900/50 backdrop-blur-sm">
-
         <div class="max-w-4xl mx-auto px-6 py-12 text-center">
-
             <h4 class="text-slate-300 font-bold mb-4 flex items-center justify-center gap-2">🛡️ Privacy & Security</h4>
-
             <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
-
                 All tools run entirely <strong>Client-side</strong>. Your passwords, video files, and JSON data are processed locally in your browser and are <span class="text-slate-400">NEVER uploaded</span> to any server.
-
             </p>
-
-            <div class="text-slate-600 text-xs border-t border-slate-800 pt-8 flex justify-center gap-6">
-
-                <p>&copy; 2025 Bento Tools.</p>
-
-                <p>Made for Creators.</p>
-
+            
+            <div class="flex justify-center gap-6 text-sm text-slate-400 mb-6 font-medium">
+                <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
+                <a href="about.html" class="hover:text-white transition">About Us</a>
             </div>
 
+            <div class="text-slate-600 text-xs border-t border-slate-800 pt-8 flex justify-center gap-6">
+                <p>&copy; 2025 Bento Tools.</p>
+                <p>Made for Creators.</p>
+            </div>
         </div>
-
     </footer>
-
 
 
     <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-slate-900 px-6 py-3 rounded-full shadow-2xl font-bold opacity-0 transition-opacity duration-300 pointer-events-none z-[60]">✅ Copied!</div>
