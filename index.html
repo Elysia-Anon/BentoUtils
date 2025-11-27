@@ -1,461 +1,239 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2929620643066807"
-     crossorigin="anonymous"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     
-
     <title>Bento Tools - Privacy-First Web Utilities</title>
-
     <meta name="description" content="Free developer tools: JSON Formatter, Strong Password Generator, CSS Gradient Maker, and Local MP4 Player. 100% Client-side & Secure.">
-
     
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     
-
     <style>
-
-
         body {
-
             background-color: #0f172a; /* Slate 900 */
-
             background-image: radial-gradient(rgba(148, 163, 184, 0.15) 1px, transparent 1px);
-
             background-size: 30px 30px;
-
             min-height: 100vh;
-
             color: white;
-
             font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-
         }
-
-
 
         .bento-grid {
-
             display: grid;
-
-            /* 手机端：单列 */
-
             grid-template-columns: 1fr; 
-
             gap: 24px;
-
             grid-auto-rows: auto;
-
             grid-auto-flow: dense;
-
         }
 
-
-
         @media (min-width: 768px) {
-
             .bento-grid {
-
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
                 grid-auto-rows: 180px;
-
             }
-
             
-
-            
+            /* Spans */
             .card-large { grid-column: span 2; grid-row: span 2; }
             .card-wide  { grid-column: span 2; }                   
             .card-tall  { grid-column: span 1; grid-row: span 2; } 
         }
 
-        
-
-        
-
+        /* Animations & Hover */
         .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
         @media (hover: hover) {
-
             .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-
         }
 
-        
-
-        
+        /* Modals */
         .modal-backdrop { backdrop-filter: blur(5px); }
-
         .modal-content { max-height: 90vh; overflow-y: auto; width: 90%; }
-
         @media (min-width: 768px) { .modal-content { width: 100%; max-width: 42rem; } }
 
-
-
-        
-
+        /* Custom Inputs */
         .drop-zone { border: 2px dashed #475569; transition: all 0.3s ease; }
-
         .drop-zone--over { border-color: #3B82F6; background-color: rgba(59, 130, 246, 0.1); }
-
         input[type="color"] { -webkit-appearance: none; border: none; width: 40px; height: 40px; padding: 0; overflow: hidden; border-radius: 50%; cursor: pointer; }
-
         input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
-
         input[type="color"]::-webkit-color-swatch { border: none; border-radius: 50%; border: 2px solid white; }
-
     </style>
-
 </head>
-
 <body class="relative">
 
-
-
     <header class="pt-12 pb-8 px-6 max-w-6xl mx-auto">
-
         <h1 class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 mb-3">
-
             Bento Tools.
-
         </h1>
-
         <p class="text-slate-400 text-base md:text-lg">Minimalist utilities for designers & developers.</p>
-
     </header>
 
-
-
     <main class="max-w-6xl mx-auto p-6 bento-grid pb-24">
-
         
-
         <div onclick="openModal('modal-gradient')" class="card card-large bg-slate-800 rounded-3xl p-8 flex flex-col justify-between border border-slate-700 hover:border-blue-500 cursor-pointer group relative overflow-hidden">
-
             <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/30 transition"></div>
-
             <div class="bg-gradient-to-br from-blue-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-lg z-10">🎨</div>
-
             <div class="z-10">
-
                 <h3 class="text-3xl font-bold mb-2 group-hover:text-blue-400 transition">CSS Gradient</h3>
-
                 <p class="text-slate-400">Visualize colors & angles. Copy CSS instantly.</p>
-
             </div>
-
             <div class="absolute bottom-6 right-8 opacity-0 group-hover:opacity-100 transition text-blue-400 font-bold hidden md:flex items-center gap-2">Try Now →</div>
-
         </div>
-
-
 
         <div onclick="openModal('modal-password')" class="card bg-slate-800 rounded-3xl p-6 flex flex-col justify-between border border-slate-700 hover:border-emerald-500 cursor-pointer group">
-
             <div class="text-3xl bg-emerald-500/10 w-12 h-12 flex items-center justify-center rounded-xl text-emerald-400">🔑</div>
-
             <div>
-
                 <h3 class="font-bold text-xl group-hover:text-emerald-400 transition">Pass Gen</h3>
-
                 <p class="text-sm text-slate-500 mt-1">Strong & Secure</p>
-
             </div>
-
         </div>
 
-
-
-        <div class="card bg-slate-800/50 rounded-3xl flex items-center justify-center border border-dashed border-slate-600 relative overflow-hidden group hover:bg-slate-800 transition">
-
-            <span class="absolute top-3 right-3 text-[10px] text-slate-500 border border-slate-600 px-1 rounded">AD</span>
-
-            <div class="text-center p-4">
-
-                <p class="text-slate-400 text-sm font-medium">Google AdSense</p>
-
-            </div>
-
+        <div class="card bg-slate-800/50 rounded-3xl flex items-center justify-center border border-slate-600 relative overflow-hidden">
+             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2929620643066807"
+             crossorigin="anonymous"></script>
+             
+             <ins class="adsbygoogle"
+                 style="display:block; width: 100%; height: 100%;"
+                 data-ad-client="ca-pub-2929620643066807"
+                 data-ad-slot="请替换为你的广告单元ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+                 
+             <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+             </script>
         </div>
-
-
-
         <div onclick="openModal('modal-video')" class="card card-wide bg-slate-800 rounded-3xl p-6 flex items-center justify-between border border-slate-700 hover:border-red-500 cursor-pointer group">
-
             <div>
-
                 <h3 class="text-2xl font-bold group-hover:text-red-400 transition">🎬 Local MP4 Player</h3>
-
                 <p class="text-slate-400 text-sm mt-1">Drag & drop to play. Privacy first.</p>
-
             </div>
-
             <div class="text-5xl text-red-500/20 group-hover:text-red-500 transition">▶</div>
-
         </div>
-
-
 
         <div onclick="openModal('modal-json')" class="card card-wide bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-6 flex items-center justify-between border border-slate-700 hover:border-yellow-500 cursor-pointer group">
-
             <div>
-
                 <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition">JSON Formatter</h3>
-
                 <p class="text-slate-400 text-sm mt-1">Beautify, Minify & Validate JSON.</p>
-
             </div>
-
             <div class="text-5xl text-yellow-500/20 group-hover:text-yellow-500 transition font-mono">{}</div>
-
         </div>
 
-
-
         <a href="blog/index.html" class="card card-tall bg-slate-800 rounded-3xl p-6 flex flex-col relative overflow-hidden border border-slate-700 hover:border-purple-500 cursor-pointer group no-underline transition">
-
             <div class="absolute -right-6 -top-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition"></div>
-
             <div class="mb-auto z-10">
-
                  <span class="bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Latest Post</span>
-
             </div>
-
             <div class="text-6xl my-4 text-center opacity-50 group-hover:scale-110 group-hover:opacity-100 transition z-10">
-
                 📝
-
             </div>
-
             <div class="z-10 mt-auto">
-
                 <h3 class="font-bold text-xl text-white group-hover:text-purple-400 transition leading-tight">
-
                     Cybersecurity 101: <br> Why Random Passwords?
-
                 </h3>
-
                 <p class="text-sm text-slate-500 mt-3 leading-relaxed">
-
                     Protect yourself from brute-force attacks.
-
                 </p>
-
                 <div class="mt-4 text-purple-400 text-sm font-bold group-hover:translate-x-2 transition inline-flex items-center gap-1">
-
                     Read Article <span>→</span>
-
                 </div>
-
             </div>
-
         </a>
-
-
 
     </main>
 
-
-
     <div id="modal-gradient" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4">
-
         <div class="absolute inset-0 bg-black/80 modal-backdrop" onclick="closeModal('modal-gradient')"></div>
-
         <div class="bg-slate-800 modal-content rounded-3xl shadow-2xl border border-slate-700 p-6 md:p-8 relative z-10 m-auto">
-
             <div class="flex justify-between items-center mb-6">
-
                 <h2 class="text-2xl font-bold">🎨 CSS Gradient</h2>
-
                 <button onclick="closeModal('modal-gradient')" class="text-slate-400 hover:text-white text-xl p-2">✕</button>
-
             </div>
-
             <div id="gradient-preview" class="w-full h-40 md:h-48 rounded-2xl mb-6 shadow-inner border border-slate-600 transition-all"></div>
-
             <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-6">
-
                 <div class="flex gap-4">
-
                     <div class="text-center"><input type="color" id="color1" value="#3B82F6" oninput="updateGradient()"><div class="text-xs text-slate-500 mt-1">Start</div></div>
-
                     <div class="text-center"><input type="color" id="color2" value="#9333EA" oninput="updateGradient()"><div class="text-xs text-slate-500 mt-1">End</div></div>
-
                 </div>
-
                 <div class="flex-1 w-full">
-
                     <label class="text-xs text-slate-400 block mb-2">Angle: <span id="angle-val">135</span>°</label>
-
                     <input type="range" id="angle" min="0" max="360" value="135" class="w-full h-2 bg-slate-600 rounded-lg appearance-none cursor-pointer" oninput="updateGradient()">
-
                 </div>
-
             </div>
-
             <div class="bg-slate-900 rounded-xl p-4 flex items-center justify-between border border-slate-700">
-
                 <code id="css-output" class="text-sm text-blue-300 font-mono overflow-hidden whitespace-nowrap text-ellipsis max-w-[150px] md:max-w-xs"></code>
-
                 <button onclick="copyGradient()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition">Copy</button>
-
             </div>
-
         </div>
-
     </div>
-
-
 
     <div id="modal-password" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4">
-
         <div class="absolute inset-0 bg-black/80 modal-backdrop" onclick="closeModal('modal-password')"></div>
-
         <div class="bg-slate-800 modal-content rounded-3xl shadow-2xl border border-slate-700 p-6 md:p-8 relative z-10 m-auto">
-
             <div class="flex justify-between items-center mb-6">
-
                 <h2 class="text-2xl font-bold">🔑 Password Gen</h2>
-
                 <button onclick="closeModal('modal-password')" class="text-slate-400 hover:text-white text-xl p-2">✕</button>
-
             </div>
-
             <div class="relative mb-6">
-
                 <input type="text" id="pass-output" class="w-full bg-slate-900 border border-slate-600 rounded-xl py-5 px-4 text-center text-xl md:text-2xl text-emerald-400 font-mono tracking-wider focus:outline-none" readonly>
-
                 <button onclick="copyPassword()" class="absolute right-3 top-3 bottom-3 px-3 bg-slate-800 text-slate-400 hover:text-white rounded border border-slate-600 text-xs md:text-sm">Copy</button>
-
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-
                 <label class="flex items-center gap-3 bg-slate-700/50 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition"><input type="checkbox" id="use-numbers" checked> <span class="font-medium">Numbers</span></label>
-
                 <label class="flex items-center gap-3 bg-slate-700/50 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition"><input type="checkbox" id="use-symbols" checked> <span class="font-medium">Symbols</span></label>
-
             </div>
-
             <button onclick="generatePassword()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl text-lg shadow-lg">⚡ Generate Password</button>
-
         </div>
-
     </div>
-
-
 
     <div id="modal-video" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4">
-
         <div class="absolute inset-0 bg-black/80 modal-backdrop" onclick="closeModal('modal-video'); resetVideoPlayer();"></div>
-
         <div class="bg-slate-800 modal-content w-full max-w-3xl rounded-3xl shadow-2xl border border-slate-700 p-6 md:p-8 relative z-10 m-auto">
-
             <div class="flex justify-between items-center mb-6">
-
                 <h2 class="text-2xl font-bold">🎬 Local MP4 Player</h2>
-
                 <button onclick="closeModal('modal-video'); resetVideoPlayer();" class="text-slate-400 hover:text-white text-xl p-2">✕</button>
-
             </div>
-
             <div id="drop-area" class="drop-zone rounded-2xl h-64 flex flex-col items-center justify-center cursor-pointer relative bg-slate-900/50">
-
                 <input type="file" id="video-input" accept="video/mp4" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
-
                 <div class="text-5xl md:text-6xl mb-4 text-slate-600">📤</div>
-
                 <p class="text-lg md:text-xl text-slate-200 font-bold mb-2 text-center">Drag & Drop MP4</p>
-
                 <p class="text-sm text-slate-500">Only .mp4 supported</p>
-
             </div>
-
             <div id="video-container" class="hidden">
-
                 <video id="main-video" controls class="w-full rounded-xl shadow-lg bg-black aspect-video"></video>
-
                 <div class="flex justify-between items-center mt-4 text-sm text-slate-400 bg-slate-900 p-3 rounded-lg border border-slate-700">
-
                     <span id="video-name" class="truncate max-w-[60%]"></span>
-
                     <span id="video-size" class="font-mono"></span>
-
                 </div>
-
             </div>
-
             <div id="video-error" class="hidden mt-4 p-4 bg-red-500/10 text-red-400 rounded-xl border border-red-500/20 text-center text-sm font-medium">⚠️ Error: Only .mp4 files are supported.</div>
-
         </div>
-
     </div>
-
-
 
     <div id="modal-json" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4">
-
         <div class="absolute inset-0 bg-black/80 modal-backdrop" onclick="closeModal('modal-json')"></div>
-
         <div class="bg-slate-800 modal-content w-full max-w-5xl rounded-3xl shadow-2xl border border-slate-700 p-6 relative z-10 flex flex-col m-auto h-[85vh]">
-
             <div class="flex flex-wrap justify-between items-center mb-4 gap-2">
-
                 <h2 class="text-2xl font-bold text-yellow-400">{} JSON</h2>
-
                 <div class="flex gap-2">
-
                     <button onclick="formatJSON()" class="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-lg text-sm font-bold">Beautify</button>
-
                     <button onclick="minifyJSON()" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-lg text-sm font-bold">Minify</button>
-
                     <button onclick="copyJSON()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-sm font-bold">Copy</button>
-
                     <button onclick="closeModal('modal-json')" class="text-slate-400 hover:text-white text-xl px-2">✕</button>
-
                 </div>
-
             </div>
-
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[300px] md:min-h-0 overflow-hidden">
-
                 <div class="flex flex-col h-full">
-
                     <label class="text-xs text-slate-500 mb-2 font-bold">INPUT</label>
-
                     <textarea id="json-input" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl p-4 font-mono text-xs md:text-sm text-slate-300 focus:outline-none focus:border-yellow-500 resize-none" placeholder='Paste JSON here...'></textarea>
-
                 </div>
-
                 <div class="flex flex-col h-full">
-
                     <label class="text-xs text-slate-500 mb-2 font-bold">OUTPUT</label>
-
                     <textarea id="json-output" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl p-4 font-mono text-xs md:text-sm text-emerald-300 focus:outline-none focus:border-emerald-500 resize-none" readonly></textarea>
-
                 </div>
-
             </div>
-
             <div id="json-error" class="hidden mt-2 text-red-400 text-xs font-mono bg-red-500/10 p-2 rounded border border-red-500/20"></div>
-
         </div>
-
     </div>
-
-
 
     <footer class="border-t border-slate-800/50 mt-20 bg-slate-900/50 backdrop-blur-sm">
         <div class="max-w-4xl mx-auto px-6 py-12 text-center">
@@ -477,135 +255,69 @@
         </div>
     </footer>
 
-
     <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-slate-900 px-6 py-3 rounded-full shadow-2xl font-bold opacity-0 transition-opacity duration-300 pointer-events-none z-[60]">✅ Copied!</div>
 
-
-
     <script>
-
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); if(id==='modal-password')generatePassword(); if(id==='modal-gradient')updateGradient(); }
-
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-
         function showToast() { const t=document.getElementById('toast'); t.classList.remove('opacity-0'); setTimeout(()=>t.classList.add('opacity-0'), 2000); }
-
         function copyText(txt) { navigator.clipboard.writeText(txt).then(()=>showToast()); }
 
-
-
         // Gradient
-
         function updateGradient() {
-
             const c1=document.getElementById('color1').value, c2=document.getElementById('color2').value, a=document.getElementById('angle').value;
-
             document.getElementById('angle-val').innerText=a;
-
             const css=`linear-gradient(${a}deg, ${c1}, ${c2})`;
-
             document.getElementById('gradient-preview').style.background=css;
-
             document.getElementById('css-output').innerText=`background: ${css};`;
-
         }
-
         function copyGradient() { copyText(document.getElementById('css-output').innerText); }
 
-
-
         // Password
-
         function generatePassword() {
-
             const len=16, num=document.getElementById('use-numbers').checked, sym=document.getElementById('use-symbols').checked;
-
             let pool="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
             if(num) pool+="0123456789";
-
             if(sym) pool+="!@#$%^&*()_+~`|}{[]:;?><,./-=";
-
             let res="";
-
             for(let i=0; i<len; i++) res+=pool.charAt(Math.floor(Math.random()*pool.length));
-
             document.getElementById('pass-output').value=res;
-
         }
-
         function copyPassword() { const v=document.getElementById('pass-output').value; if(v) copyText(v); }
 
-
-
         // Video
-
         const da=document.getElementById('drop-area'), vi=document.getElementById('video-input'), mv=document.getElementById('main-video');
-
         ['dragenter','dragover'].forEach(e=>da.addEventListener(e,ev=>{ev.preventDefault();da.classList.add('drop-zone--over')},false));
-
         ['dragleave','drop'].forEach(e=>da.addEventListener(e,ev=>{ev.preventDefault();da.classList.remove('drop-zone--over')},false));
-
         da.addEventListener('drop',e=>handleFiles(e.dataTransfer.files));
-
         vi.addEventListener('change',e=>handleFiles(e.target.files));
-
         function handleFiles(files) {
-
             if(!files.length)return;
-
             const f=files[0];
-
             if(f.type!=='video/mp4'){document.getElementById('video-error').classList.remove('hidden');document.getElementById('video-container').classList.add('hidden');return;}
-
             resetVideoPlayer();
-
             document.getElementById('video-name').innerText=f.name;
-
             document.getElementById('video-size').innerText=(f.size/(1024*1024)).toFixed(2)+" MB";
-
             mv.src=URL.createObjectURL(f);
-
             da.classList.add('hidden');
-
             document.getElementById('video-container').classList.remove('hidden');
-
             mv.play();
-
         }
-
         function resetVideoPlayer() { mv.pause(); mv.removeAttribute('src'); mv.load(); da.classList.remove('hidden'); document.getElementById('video-container').classList.add('hidden'); document.getElementById('video-error').classList.add('hidden'); vi.value=''; }
 
-
-
         // JSON
-
         function formatJSON() { processJSON(true); }
-
         function minifyJSON() { processJSON(false); }
-
         function processJSON(beautify) {
-
             const inp=document.getElementById('json-input').value, err=document.getElementById('json-error'), out=document.getElementById('json-output');
-
             try {
-
                 if(!inp)return;
-
                 const p=JSON.parse(inp);
-
                 out.value=beautify?JSON.stringify(p,null,4):JSON.stringify(p);
-
                 err.classList.add('hidden');
-
             } catch(e) { out.value=""; err.innerText="❌ Invalid JSON: "+e.message; err.classList.remove('hidden'); }
-
         }
-
         function copyJSON() { const v=document.getElementById('json-output').value; if(v) copyText(v); }
-
     </script>
-
 </body>
-
 </html>
