@@ -2,54 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bentoutils.xyz/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/index.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/secure-password-guide.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/local-json-formatting.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/css-gradient-trends.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/what-is-password-entropy.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/blog/rgb-vs-hex-guide.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/about.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/privacy.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://bentoutils.xyz/terms.html</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <priority>0.5</priority>
   </url>
+
 </urlset>
