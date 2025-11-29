@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>RGB vs HEX: How Computers See Colors - Bento Blog</title>
+    <meta name="description" content="Ever wondered what #FF5733 means? A beginner's guide to digital color theory and hexadecimal codes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; background-image: radial-gradient(rgba(148, 163, 184, 0.15) 1px, transparent 1px); background-size: 30px 30px; min-height: 100vh; color: #e2e8f0; font-family: sans-serif; }
+        article h2 { color: white; font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
+        article p { color: #94a3b8; margin-bottom: 1.5rem; line-height: 1.8; }
+        article strong { color: #a855f7; /* Purple */ }
+        code { font-family: monospace; background: #3b0764; padding: 0.2rem 0.4rem; rounded: 0.25rem; color: #d8b4fe; }
+    </style>
+</head>
+<body class="selection:bg-purple-500 selection:text-white">
+
+    <nav class="max-w-3xl mx-auto px-6 py-8 flex justify-between items-center">
+        <a href="index.html" class="text-slate-400 hover:text-white transition">← Back to Blog List</a>
+        <div class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Bento Blog.</div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 pb-24">
+        <header class="mb-10 border-b border-slate-800 pb-10">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-xs font-bold uppercase">Design</span>
+                <span class="text-slate-500 text-sm">Nov 30, 2025</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">RGB vs. HEX: Decoding the Secret Language of Colors</h1>
+        </header>
+
+        <div class="prose">
+            <p>If you are a web designer or developer, you see codes like <code>#FF5733</code> every day. But have you ever stopped to think about what those letters and numbers actually mean?</p>
+            <p>It's not magic—it's just math. Specifically, it's <strong>Base-16 math</strong>.</p>
+
+            <h2>The RGB Model: Mixing Light</h2>
+            <p>Screens work differently from paint. When you mix paint, colors get darker. When you mix light (pixels), colors get brighter.</p>
+            <p>Every pixel on your screen is made of three tiny lights: <strong>Red, Green, and Blue (RGB)</strong>. By varying the intensity of these three lights, we can create over 16 million colors.</p>
+
+            <h2>Decoding the HEX Code</h2>
+            <p>A HEX code is just a shorter way to write RGB values. Let's break down <code>#FF5733</code>:</p>
+            <ul class="list-disc pl-6 text-slate-400 mb-6 space-y-2">
+                <li>The first two digits (<strong>FF</strong>) represent Red intensity.</li>
+                <li>The middle two (<strong>57</strong>) represent Green intensity.</li>
+                <li>The last two (<strong>33</strong>) represent Blue intensity.</li>
+            </ul>
+            <p><code>FF</code> is the highest number in hexadecimal (equal to 255 in decimal), meaning "Maximum Red". That's why <code>#FF0000</code> is bright red!</p>
+
+            <h2>Why Use Gradients?</h2>
+            <p>Gradients are simply the smooth mathematical transition between two HEX codes. Our <strong>CSS Gradient Tool</strong> calculates the intermediate steps for you, creating a seamless flow from one color to another.</p>
+
+            <div class="mt-10 pt-10 border-t border-slate-800">
+                <a href="../index.html" class="block bg-slate-800 hover:bg-slate-700 p-6 rounded-2xl transition group text-center border border-slate-700">
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition">Try Color Mixing</h3>
+                    <p class="text-slate-400">Create your own gradients visually →</p>
+                </a>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
